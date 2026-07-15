@@ -18,6 +18,12 @@ engineering-marketplace/
 │   └── marketplace.json          # the catalog: lists every plugin
 ├── README.md
 ├── CONTRIBUTING.md
+├── git/                          # Git competency (language-agnostic)
+│   └── workflow/                 # plugin: git-workflow
+│       ├── .claude-plugin/plugin.json
+│       ├── commands/             # /pr-desc (later: /commit-msg, /changelog)
+│       ├── rules/                # swappable PR style
+│       └── README.md
 └── js/                           # JavaScript/TypeScript competency
     ├── testing/                  # plugin: js-testing
     │   ├── .claude-plugin/plugin.json
@@ -51,8 +57,9 @@ Then restart your Claude Code session. Verify with `/plugin` or `claude plugin l
 |---|---|---|
 | **js-testing** | JavaScript/TypeScript | `/analyze-tests`, `/cover-with-tests`, `/test-changes` — a testing loop for TypeScript projects (Node libs, backends, CLIs, React apps). Auto-detects Jest vs Vitest and React. |
 | **js-review** | JavaScript/TypeScript | `/review-code` — evaluates TypeScript against a swappable standard (React-aware when detected); optional capped reviewer→fixer loop. More review targets (tests quality, structure, architecture) planned. |
+| **git-workflow** | Git | `/pr-desc` — generates a PR title/description from the branch diff; fills the repo's PR template when present. Language-agnostic. |
 
-More plugins and competencies are on the roadmap: `scaffold-component`, `pr-desc`, more js-review targets, and Python and Life-Science competencies.
+More plugins and competencies are on the roadmap: `scaffold-component`, `/commit-msg`, more js-review targets, and Python and Life-Science competencies.
 
 ## Contributing
 

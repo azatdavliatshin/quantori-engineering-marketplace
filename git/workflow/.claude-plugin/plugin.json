@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "git-workflow",
+  "displayName": "Git Workflow",
+  "version": "0.1.0",
+  "description": "Git workflow atoms: generate a PR title/description from the branch diff. Uses repo templates.",
+  "author": {
+    "name": "Quantori Engineering"
+  },
+  "keywords": ["git", "github", "pull-request", "workflow", "pr-description"]
+}

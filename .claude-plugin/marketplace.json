@@ -30,6 +30,13 @@
       "source": "./js/review",
       "version": "0.1.0",
       "keywords": ["javascript", "typescript", "react", "code-review", "quality", "best-practices"]
+    },
+    {
+      "name": "git-workflow",
+      "description": "Git workflow atoms: generate a PR title/description from the branch diff. Uses repo templates.",
+      "source": "./git/workflow",
+      "version": "0.1.0",
+      "keywords": ["git", "github", "pull-request", "workflow", "pr-description"]
     }
   ]
 }

@@ -25,4 +25,4 @@ Anything project- or org-specific lives in **`rules/conventions.md`**, a swappab
 
 ## Roadmap
 
-- `scaffold-component`, `pr-desc` — pair with js-review's `/review-code` into a pre-commit story.
+- `scaffold-component` — pairs with js-review's `/review-code` and git-workflow's `/pr-desc` into a pre-commit story.
