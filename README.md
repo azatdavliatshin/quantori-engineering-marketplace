@@ -42,7 +42,7 @@ Then restart your Claude Code session. Verify with `/plugin` or `claude plugin l
 
 | Plugin | Competency | What it gives you |
 |---|---|---|
-| **js-testing** | JavaScript/TypeScript | `/analyze-tests`, `/cover-with-tests`, `/review-code` — a testing loop for TS/React projects. Auto-detects Jest vs Vitest. |
+| **js-testing** | JavaScript/TypeScript | `/analyze-tests`, `/cover-with-tests`, `/review-code` — a testing loop for TypeScript projects (Node libs, backends, CLIs, React apps). Auto-detects Jest vs Vitest and React. |
 
 More plugins and competencies are on the roadmap: a `/test-changes` composition, `scaffold-component`, and Python and Life-Science competencies.
 

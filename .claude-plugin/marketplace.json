@@ -12,10 +12,10 @@
   "plugins": [
     {
       "name": "js-testing",
-      "description": "TS/React testing atoms: analyze coverage, write tests, review code. Auto-detects Jest vs Vitest.",
+      "description": "TypeScript testing atoms: analyze coverage, write tests, review code. Detects Jest/Vitest; React-aware.",
       "source": "./js/testing",
       "version": "0.1.0",
-      "keywords": ["javascript", "typescript", "react", "testing", "jest", "vitest", "code-review"]
+      "keywords": ["javascript", "typescript", "node", "react", "testing", "coverage", "jest", "vitest", "code-review"]
     }
   ]
 }

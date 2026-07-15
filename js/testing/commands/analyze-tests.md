@@ -1,5 +1,5 @@
 ---
-description: Diagnose TS/React test coverage; runs the coverage tool if runnable, else static. Writes nothing.
+description: Diagnose TypeScript test coverage; runs the coverage tool if runnable, else static. Writes nothing.
 argument-hint: [dir-or-scope] (optional, defaults to the project)
 allowed-tools: Read, Grep, Glob, Bash
 ---
@@ -18,7 +18,7 @@ Load the backing skill **js-test-authoring** and read `${CLAUDE_PLUGIN_ROOT}/rul
    ```bash
    bash "${CLAUDE_PLUGIN_ROOT}/skills/js-test-authoring/scripts/detect-runner.sh" "${ARGUMENTS:-.}"
    ```
-   Note `RUNNER`, `TEST_SCRIPT`, `PKG_MANAGER`, `PACKAGE_DIR`.
+   Note `RUNNER`, `REACT`, `TEST_SCRIPT`, `PKG_MANAGER`, `PACKAGE_DIR`.
 
 2. **Try to run coverage** (preferred — real data). Use the project's tooling:
    ```bash
@@ -31,7 +31,7 @@ Load the backing skill **js-test-authoring** and read `${CLAUDE_PLUGIN_ROOT}/rul
 
 3. **If the suite can't run** (no install, missing deps, sandbox, or it errors), fall back to **static reasoning**: enumerate source files under scope (`Glob`), find which have a colocated/matching test (`Glob`/`Grep`), and read logic-heavy or user-facing files to judge which branches look untested. **State clearly that this is a static estimate, not measured coverage.**
 
-4. **Rank the gaps by value, not by percentage.** Prioritize, in order: untested user-facing components and logic-heavy modules; uncovered branches (error/empty/loading paths); exported units with no test file at all; weakly-covered files (a test exists but misses key branches). Deprioritize trivial/generated/config files.
+4. **Rank the gaps by value, not by percentage.** Prioritize, in order: logic-heavy modules (and, when `REACT=yes`, user-facing components); uncovered branches (error/empty/edge paths — plus loading states for React); exported units with no test file at all; weakly-covered files (a test exists but misses key branches). Deprioritize trivial/generated/config files.
 
 5. **Report** (concise, no files written):
    - **Mode used:** measured coverage vs static estimate, and the runner.

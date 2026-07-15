@@ -20,6 +20,7 @@ if [ -z "$pkg" ]; then
   echo "RUNNER=unknown"
   echo "CONFIG="
   echo "NEXTJS=no"
+  echo "REACT=no"
   echo "TEST_SCRIPT="
   echo "PKG_MANAGER=unknown"
   echo "PACKAGE_DIR=$start_dir"
@@ -78,7 +79,20 @@ if [ "$runner" = "unknown" ] && [ -n "$config" ] && grep -q "next/jest" "$config
   runner="jest"
 fi
 
-# 5) Package manager from lockfile (nearest, then repo).
+# 5) React detection: react dep, @testing-library/react, or JSX/TSX files present.
+react="no"
+if has_dep react || has_dep "@testing-library/react"; then
+  react="yes"
+else
+  jsx_file="$(find "$pkgdir" -maxdepth 4 \
+    \( -name node_modules -o -name dist -o -name build -o -name .next -o -name coverage \) -prune \
+    -o \( -name '*.tsx' -o -name '*.jsx' \) -print 2>/dev/null | head -n1 || true)"
+  [ -n "$jsx_file" ] && react="yes"
+fi
+# Next.js implies React.
+[ "$nextjs" = "yes" ] && react="yes"
+
+# 6) Package manager from lockfile (nearest, then repo).
 pm="npm"
 d="$pkgdir"
 while [ "$d" != "/" ]; do
@@ -93,6 +107,7 @@ done
 echo "RUNNER=$runner"
 echo "CONFIG=$config"
 echo "NEXTJS=$nextjs"
+echo "REACT=$react"
 echo "TEST_SCRIPT=$test_script"
 echo "PKG_MANAGER=$pm"
 echo "PACKAGE_DIR=$pkgdir"
