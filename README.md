@@ -21,7 +21,7 @@ engineering-marketplace/
 └── js/                           # JavaScript/TypeScript competency
     ├── testing/                  # plugin: js-testing
     │   ├── .claude-plugin/plugin.json
-    │   ├── commands/             # /analyze-tests, /cover-with-tests
+    │   ├── commands/             # /analyze-tests, /cover-with-tests, /test-changes
     │   ├── skills/               # backing knowledge the commands share
     │   ├── rules/                # swappable conventions (generic now, Quantori-specific later)
     │   └── README.md
@@ -49,10 +49,10 @@ Then restart your Claude Code session. Verify with `/plugin` or `claude plugin l
 
 | Plugin | Competency | What it gives you |
 |---|---|---|
-| **js-testing** | JavaScript/TypeScript | `/analyze-tests`, `/cover-with-tests` — a testing loop for TypeScript projects (Node libs, backends, CLIs, React apps). Auto-detects Jest vs Vitest and React. |
+| **js-testing** | JavaScript/TypeScript | `/analyze-tests`, `/cover-with-tests`, `/test-changes` — a testing loop for TypeScript projects (Node libs, backends, CLIs, React apps). Auto-detects Jest vs Vitest and React. |
 | **js-review** | JavaScript/TypeScript | `/review-code` — evaluates TypeScript against a swappable standard (React-aware when detected); optional capped reviewer→fixer loop. More review targets (tests quality, structure, architecture) planned. |
 
-More plugins and competencies are on the roadmap: a `/test-changes` composition, `scaffold-component`, and Python and Life-Science competencies.
+More plugins and competencies are on the roadmap: `scaffold-component`, `pr-desc`, more js-review targets, and Python and Life-Science competencies.
 
 ## Contributing
 

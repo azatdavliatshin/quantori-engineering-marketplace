@@ -5,7 +5,7 @@ description: Use when writing, analyzing, or reviewing tests in TypeScript proje
 
 # JS/TS Test Authoring
 
-Shared knowledge for the `js-testing` plugin's commands (`/analyze-tests`, `/cover-with-tests`). Claude also auto-loads this when a testing task comes up without an explicit command.
+Shared knowledge for the `js-testing` plugin's commands (`/analyze-tests`, `/cover-with-tests`, `/test-changes`). Claude also auto-loads this when a testing task comes up without an explicit command.
 
 Always read the swappable conventions before writing or judging tests: **`${CLAUDE_PLUGIN_ROOT}/rules/conventions.md`**. That file is the source of truth for language, file placement, what-to-test priorities, mocking, and coverage expectations. This SKILL.md covers the mechanics (detection, running) that don't change per project.
 

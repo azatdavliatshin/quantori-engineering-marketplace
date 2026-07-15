@@ -1,6 +1,6 @@
 # js-testing
 
-Testing atoms for TypeScript projects — Node libraries, backends, CLIs, and React apps alike. React is a **detected** first-class case, not an assumption: the runner detector reports `REACT=yes|no` and the React-specific guidance (Testing Library, jsdom, component priorities) switches on only when it applies. Two commands form a natural loop — **analyze the gaps → cover them** — but each stands alone. (Code review lives in the sibling **js-review** plugin.)
+Testing atoms for TypeScript projects — Node libraries, backends, CLIs, and React apps alike. React is a **detected** first-class case, not an assumption: the runner detector reports `REACT=yes|no` and the React-specific guidance (Testing Library, jsdom, component priorities) switches on only when it applies. The commands form a natural loop — **analyze the gaps → cover them** — plus a composition that covers your git changes; each stands alone. (Code review lives in the sibling **js-review** plugin.)
 
 ## Commands
 
@@ -8,6 +8,7 @@ Testing atoms for TypeScript projects — Node libraries, backends, CLIs, and Re
 |---|---|---|
 | `/analyze-tests` | diagnose (read-only) | Reports the testing situation. Runs the coverage tool if the project is runnable (`vitest --coverage` / `jest --coverage`) and parses the report; falls back to static reasoning when it can't run the suite. Lists uncovered / weakly-covered files and the highest-value gaps. **Writes nothing.** |
 | `/cover-with-tests` | generate | "Cover this module/component with tests." Detects the runner (Jest vs Vitest, Next.js-aware) and React, writes tests, runs them, reports pass/fail. |
+| `/test-changes` | compose (scope → judge → generate) | "Test what I just changed." Scopes to the git diff (optionally vs a base ref), judges which changed files actually need tests (bug fixes get regression tests; renames/type-only changes are skipped with reasons), then delegates each to `/cover-with-tests`. |
 
 ## How it's built
 
@@ -24,5 +25,4 @@ Anything project- or org-specific lives in **`rules/conventions.md`**, a swappab
 
 ## Roadmap
 
-- `/test-changes` — "review my git changes and write tests for what needs it" (git-diff scoping + a needs-tests judgment, then calls `/cover-with-tests`).
 - `scaffold-component`, `pr-desc` — pair with js-review's `/review-code` into a pre-commit story.
