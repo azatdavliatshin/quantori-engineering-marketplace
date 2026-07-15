@@ -7,7 +7,14 @@
   },
   "metadata": {
     "description": "Quantori Engineering Marketplace — installable Claude Code capabilities (skills, plugins, commands) for Quantori engineers. Organized by competency: JavaScript/TypeScript first, more to come.",
-    "version": "0.1.0"
+    "version": "0.1.0",
+    "references": [
+      {
+        "name": "GSD (Get Shit Done)",
+        "url": "https://github.com/open-gsd/gsd-core",
+        "note": "Patterns borrowed: capped reviewer→fixer loop, slopcheck seed, namespace routing."
+      }
+    ]
   },
   "plugins": [
     {
