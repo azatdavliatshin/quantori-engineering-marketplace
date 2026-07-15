@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "js-testing",
+  "displayName": "JS/TS Testing",
+  "version": "0.1.0",
+  "description": "Testing atoms for TypeScript/React projects: analyze coverage, write tests, review code. Auto-detects the test runner (Jest vs Vitest, Next.js-aware).",
+  "author": {
+    "name": "Quantori Engineering"
+  },
+  "keywords": ["javascript", "typescript", "react", "testing", "jest", "vitest", "code-review"]
+}

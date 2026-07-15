@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "quantori-engineering",
+  "owner": {
+    "name": "Azat Davliatshin",
+    "url": "https://github.com/azatdavliatshin/quantori-engineering-marketplace"
+  },
+  "metadata": {
+    "description": "Quantori Engineering Marketplace — installable Claude Code capabilities (skills, plugins, commands) for Quantori engineers. Organized by competency: JavaScript/TypeScript first, more to come.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "js-testing",
+      "description": "TS/React testing atoms: analyze coverage, write tests, review code. Auto-detects Jest vs Vitest.",
+      "source": "./js/testing",
+      "version": "0.1.0",
+      "keywords": ["javascript", "typescript", "react", "testing", "jest", "vitest", "code-review"]
+    }
+  ]
+}
