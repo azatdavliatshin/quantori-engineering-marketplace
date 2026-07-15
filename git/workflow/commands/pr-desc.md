@@ -10,7 +10,7 @@ Generate a ready-to-paste PR title and description from what the branch actually
 
 **Base:** `$ARGUMENTS` — an optional base ref. If empty, detect the default branch (`origin/HEAD`, falling back to `main`/`master`) and use the merge-base.
 
-Read the style seam at `${CLAUDE_PLUGIN_ROOT}/rules/pr-style.md` before writing — it holds house rules (tone, required sections, ticket-reference format).
+Read the style seam at `${CLAUDE_PLUGIN_ROOT}/rules/pr-style.md` before writing — it holds house rules (tone, required sections, ticket-reference format). If `.claude/git-workflow.json` exists (created by `/init-workflow`), apply it too: derive the ticket from the branch name via its `ticketPattern` and put it in the title/summary per its rules. No config, no derivable ticket → skip ticket references; don't invent one.
 
 ## Step 1 — Scope
 

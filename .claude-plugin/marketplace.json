@@ -33,10 +33,10 @@
     },
     {
       "name": "git-workflow",
-      "description": "Git workflow atoms: generate a PR title/description from the branch diff. Uses repo templates.",
+      "description": "Git workflow atoms: Conventional Commits, PR descriptions from the diff, per-repo ticket config.",
       "source": "./git/workflow",
       "version": "0.1.0",
-      "keywords": ["git", "github", "pull-request", "workflow", "pr-description"]
+      "keywords": ["git", "github", "pull-request", "workflow", "pr-description", "conventional-commits", "commit"]
     }
   ]
 }
