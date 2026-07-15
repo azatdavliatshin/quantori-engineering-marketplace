@@ -21,7 +21,7 @@ engineering-marketplace/
 ├── git/                          # Git competency (language-agnostic)
 │   └── workflow/                 # plugin: git-workflow
 │       ├── .claude-plugin/plugin.json
-│       ├── commands/             # /pr-desc, /commit, /init-workflow
+│       ├── commands/             # /branch, /commit, /pr-desc, /init-workflow
 │       ├── rules/                # swappable PR style
 │       └── README.md
 └── js/                           # JavaScript/TypeScript competency
@@ -57,7 +57,7 @@ Then restart your Claude Code session. Verify with `/plugin` or `claude plugin l
 |---|---|---|
 | **js-testing** | JavaScript/TypeScript | `/analyze-tests`, `/cover-with-tests`, `/test-changes` — a testing loop for TypeScript projects (Node libs, backends, CLIs, React apps). Auto-detects Jest vs Vitest and React. |
 | **js-review** | JavaScript/TypeScript | `/review-code` — evaluates TypeScript against a swappable standard (React-aware when detected); optional capped reviewer→fixer loop. More review targets (tests quality, structure, architecture) planned. |
-| **git-workflow** | Git | `/pr-desc`, `/commit` (Conventional Commits), `/init-workflow` (per-repo ticket config) — diff-driven, language-agnostic. Repo templates and config always win over defaults. |
+| **git-workflow** | Git | `/branch`, `/commit` (Conventional Commits), `/pr-desc`, `/init-workflow` (per-repo ticket config) — the branch lifecycle, diff-driven and language-agnostic. Repo conventions always win over defaults. |
 
 More plugins and competencies are on the roadmap: `scaffold-component`, `/changelog`, more js-review targets, and Python and Life-Science competencies.
 
