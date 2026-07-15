@@ -41,6 +41,6 @@ Load the backing skill **js-test-authoring** and read `${CLAUDE_PLUGIN_ROOT}/rul
 
 ## Guardrails
 
-- Write nothing and change nothing — not even to "quickly try" a fix. If asked to fix, that's `/cover-with-tests` or `/review-code`.
+- Write nothing and change nothing — not even to "quickly try" a fix. If asked to fix, that's `/cover-with-tests` (or `/review-code` from the js-review plugin).
 - Don't install packages or alter config to make coverage run; if it can't run as-is, use the static fallback and say so.
 - Don't inflate the picture: distinguish "no test file" from "tested but shallow," and never present a static estimate as a measured number.

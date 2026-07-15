@@ -3,9 +3,9 @@
   "name": "js-testing",
   "displayName": "JS/TS Testing",
   "version": "0.1.0",
-  "description": "TypeScript testing atoms: analyze coverage, write tests, review code. Detects Jest/Vitest; React-aware.",
+  "description": "TypeScript testing atoms: analyze coverage and write tests. Detects Jest/Vitest; React-aware.",
   "author": {
     "name": "Quantori Engineering"
   },
-  "keywords": ["javascript", "typescript", "node", "react", "testing", "coverage", "jest", "vitest", "code-review"]
+  "keywords": ["javascript", "typescript", "node", "react", "testing", "coverage", "jest", "vitest"]
 }

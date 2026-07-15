@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "js-review",
+  "displayName": "JS/TS Review",
+  "version": "0.1.0",
+  "description": "TypeScript review atoms: evaluate code against swappable standards, with an optional capped fix loop.",
+  "author": {
+    "name": "Quantori Engineering"
+  },
+  "keywords": ["javascript", "typescript", "react", "code-review", "quality", "best-practices"]
+}

@@ -19,10 +19,17 @@
   "plugins": [
     {
       "name": "js-testing",
-      "description": "TypeScript testing atoms: analyze coverage, write tests, review code. Detects Jest/Vitest; React-aware.",
+      "description": "TypeScript testing atoms: analyze coverage and write tests. Detects Jest/Vitest; React-aware.",
       "source": "./js/testing",
       "version": "0.1.0",
-      "keywords": ["javascript", "typescript", "node", "react", "testing", "coverage", "jest", "vitest", "code-review"]
+      "keywords": ["javascript", "typescript", "node", "react", "testing", "coverage", "jest", "vitest"]
+    },
+    {
+      "name": "js-review",
+      "description": "TypeScript review atoms: evaluate code against swappable standards; optional capped fix loop.",
+      "source": "./js/review",
+      "version": "0.1.0",
+      "keywords": ["javascript", "typescript", "react", "code-review", "quality", "best-practices"]
     }
   ]
 }

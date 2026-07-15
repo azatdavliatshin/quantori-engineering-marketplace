@@ -19,11 +19,18 @@ engineering-marketplace/
 ├── README.md
 ├── CONTRIBUTING.md
 └── js/                           # JavaScript/TypeScript competency
-    └── testing/                  # plugin: js-testing
+    ├── testing/                  # plugin: js-testing
+    │   ├── .claude-plugin/plugin.json
+    │   ├── commands/             # /analyze-tests, /cover-with-tests
+    │   ├── skills/               # backing knowledge the commands share
+    │   ├── rules/                # swappable conventions (generic now, Quantori-specific later)
+    │   └── README.md
+    └── review/                   # plugin: js-review
         ├── .claude-plugin/plugin.json
-        ├── commands/             # /analyze-tests, /cover-with-tests, /review-code
-        ├── skills/               # backing knowledge the commands share
-        ├── rules/                # swappable conventions (generic now, Quantori-specific later)
+        ├── commands/             # /review-code (more review targets later)
+        ├── skills/               # severity discipline, detection, fixer loop
+        ├── agents/               # js-code-fixer subagent
+        ├── rules/                # swappable review standards, one file per target
         └── README.md
 ```
 
@@ -42,7 +49,8 @@ Then restart your Claude Code session. Verify with `/plugin` or `claude plugin l
 
 | Plugin | Competency | What it gives you |
 |---|---|---|
-| **js-testing** | JavaScript/TypeScript | `/analyze-tests`, `/cover-with-tests`, `/review-code` — a testing loop for TypeScript projects (Node libs, backends, CLIs, React apps). Auto-detects Jest vs Vitest and React. |
+| **js-testing** | JavaScript/TypeScript | `/analyze-tests`, `/cover-with-tests` — a testing loop for TypeScript projects (Node libs, backends, CLIs, React apps). Auto-detects Jest vs Vitest and React. |
+| **js-review** | JavaScript/TypeScript | `/review-code` — evaluates TypeScript against a swappable standard (React-aware when detected); optional capped reviewer→fixer loop. More review targets (tests quality, structure, architecture) planned. |
 
 More plugins and competencies are on the roadmap: a `/test-changes` composition, `scaffold-component`, and Python and Life-Science competencies.
 
