@@ -33,10 +33,10 @@
     },
     {
       "name": "git-workflow",
-      "description": "Git workflow atoms: Conventional Commits, PR descriptions from the diff, per-repo ticket config.",
+      "description": "Git workflow atoms: branches, Conventional Commits, PR descriptions. Diff-driven, ticket-aware.",
       "source": "./git/workflow",
       "version": "0.1.0",
-      "keywords": ["git", "github", "pull-request", "workflow", "pr-description", "conventional-commits", "commit"]
+      "keywords": ["git", "github", "branch", "pull-request", "workflow", "pr-description", "conventional-commits", "commit"]
     }
   ]
 }
