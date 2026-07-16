@@ -26,6 +26,18 @@
 
 Do **not** write tests that merely restate the implementation, snapshot enormous structures, or assert on internals that aren't part of the contract.
 
+### Contract over current behavior (bug-enshrinement guard)
+
+Expected values in assertions come from the **contract** — the signature, types, names, docs, and how callers use the unit — decided **before** running the code. Never copy the implementation's actual output into an assertion just because that's what it returns today: a test written that way turns a latent bug into documented, protected behavior, and it will pass on day one so nothing ever flags it.
+
+When actual behavior contradicts the contract-derived expectation:
+
+1. Do **not** assert the buggy value.
+2. Write the case with the **correct** expectation and mark it a known failure — `it.fails` (Vitest) / `test.failing` (Jest) — or `it.todo` if it can't run. The suite stays green; the discrepancy stays visible in the test file.
+3. Report it as a suspected bug: location, expected vs actual, and why the contract says otherwise. The author decides.
+
+The one exception is **characterization tests** — deliberately pinning current behavior (bugs included) before a legacy refactor. Only when explicitly requested, and labeled as such in the test name.
+
 ## Mocking
 
 - Mock at the module boundary (network, timers, filesystem, external SDKs), not the unit under test.
