@@ -71,4 +71,5 @@ If the suite can't run (missing deps, no install, sandboxed), fall back to **sta
 
 - Verify before declaring done: a command that writes tests must run them (or explain why it couldn't).
 - Never weaken a test to make it pass. If code is buggy, report the bug; don't assert the wrong behavior.
+- The mirror image also holds for tests that would *pass*: expectations come from the contract, not from the code's current output. If actual behavior contradicts the contract, don't enshrine it — write the correct expectation, mark it `it.fails`/`test.failing` (or `it.todo`), and report a suspected bug (see the conventions' bug-enshrinement guard).
 - Don't install packages or change runner config unless the task explicitly calls for it — report what's missing instead.

@@ -24,6 +24,8 @@ Load the backing skill **js-test-authoring** for detection mechanics and runner-
 
 3. **Plan the cases** against `rules/conventions.md` "What to test" priority: the input→output contract, each branch, edge/empty/error states. When `REACT=yes` and the target is a component, add user interactions and prefer role/label queries (React section of the conventions). Skip tests that merely restate the implementation. Briefly list the cases you'll write.
 
+   **Decide each expected outcome from the contract** (types, names, docs, callers) *before* checking what the implementation actually returns — never copy today's output into an assertion. If the implementation contradicts a contract-derived expectation, apply the conventions' bug-enshrinement guard: assert the correct value, mark the case `it.fails` (Vitest) / `test.failing` (Jest), and report the suspected bug.
+
 4. **Write the test file.** Place and name it per the conventions (colocated `*.test.ts` — `*.test.tsx` for components; match the project's existing pattern if different). Use the **detected** runner's import/mock surface (`vi.*` for Vitest, `jest.*`/globals for Jest). TypeScript, no `any`, typed mocks. Mock at module boundaries only.
 
 5. **Run the tests** — prefer the project's script so config is honored:
@@ -34,7 +36,7 @@ Load the backing skill **js-test-authoring** for detection mechanics and runner-
 
 6. **On failure, diagnose the cause:**
    - *Test bug* (wrong query, missing `await`, bad mock) → fix the test and re-run.
-   - *Real code bug* → do **not** bend the test to pass. Report the bug clearly and stop; let the author decide.
+   - *Real code bug* → do **not** bend the test to pass — and do **not** quietly rewrite the expectation to match the buggy output. Keep the correct expectation, mark the case `it.fails`/`test.failing`, report the bug clearly, and let the author decide.
    - *Can't run* (missing deps / no install / sandbox) → say so, keep the tests, and note that they're unverified plus the exact command to run them.
 
 7. **Report:** the file written, the cases covered, and the run result (pass/fail counts, or why it couldn't run). Keep it short.

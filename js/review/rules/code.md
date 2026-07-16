@@ -31,6 +31,7 @@
 ## Tests (if test files are in scope)
 
 - Implementation-detail assertions instead of behavior.
+- **Enshrined bugs** — expected values that mirror suspicious actual output where the contract (signature, types, naming, docs) says otherwise: off-by-one boundaries, wrong rounding, swallowed errors asserted as success. Usually **[blocker]**: the test protects the bug.
 - Missing branch coverage for the code under test; brittle snapshots.
 - In React tests: `data-testid` where a role/label query fits.
 
