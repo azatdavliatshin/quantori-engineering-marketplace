@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate catalog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Catalog structure & discipline
+        run: python3 scripts/validate-catalog.py
+
+      - name: Shell syntax (all scripts)
+        run: |
+          set -e
+          find . -name '*.sh' -not -path './node_modules/*' -print -exec bash -n {} \;
+
+      - name: detect-runner fixture tests
+        run: bash scripts/test-detect-runner.sh
